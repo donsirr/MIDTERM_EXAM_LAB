@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Richard-Apps' personal webpage! Explore a place with all my projects, pictures, and thoughts. Featuring a terminal-inspired design with stunning effects.">
+	<meta name="author" content="Richard-Apps">
+
+	<title>Group 0 - Midterm Lab Exam</title>
+	
+	<link rel="icon" type="image/png" href="src/media/favicon.png">
+	<link rel="apple-touch-icon" href="apple-touch-icon.png">
+	<link rel="canonical" href="https://www.richardapps.net">
+
+	<script src="script.js" defer></script>
+
+	<link rel="preload" as="font" href="src/fonts/terminus-webfont.woff2" type="font/woff2" crossorigin="anonymous">
+
+	<link rel="stylesheet" href="style.css">
+
+	<meta proberty="og:title" content="RichardApps">
+	<meta proberty="og:description" content="RichardApps' personal webpage! Explore a place with all my projects, pictures, and thoughts. Featuring a terminal-inspired design with stunning effects.">
+	<meta proberty="og:image" content="">
+	<meta proberty="og:url" content="https://richardapps.net">
+	
+	<meta name="keywords" content="RichardApps, Richard Apps, Richard-Apps">
+	<meta name="robots" content="index, follow">
+	<meta name="revisit-after" content="7 days">
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"/>
+
+</head>
+
+<body>
+	<video
+		preload="none"
+		onloadstart="this.playbackRate = 0.65;"
+		autoplay
+		muted
+		loop
+		playsinline
+		id="noise_vid"
+		src="https://files.catbox.moe/hop8wg.mp4"
+		poster="/src/media/noise_static.png"
+		>
+	</video>
+
+	<video
+		preload="none"
+		onloadstart="this.playbackRate = 0.85;"
+		autoplay
+		muted
+		loop
+		playsinline
+		id="rain_vid"
+		src="https://files.catbox.moe/i7le27.mp4"
+		poster="/src/media/rain_bg_static.png"
+		>
+	</video>
+
+	<div class="vignette"></div>
+
+	<div id="videohue"></div>
+	<div id="canvas">
+		<header>
+			<pre id="title">
+ _____ ______ _____ _   _______   ______ ___________ _____ 
+|  __ \| ___ \  _  | | | | ___ \ |___  /|  ___| ___ \  _  |
+| |  \/| |_/ / | | | | | | |_/ /    / / | |__ | |_/ / | | |
+| | __ |    /| | | | | | |  __/    / /  |  __||    /| | | |
+| |_\ \| |\ \\ \_/ / |_| | |     ./ /___| |___| |\ \\ \_/ /
+ \____/\_| \_|\___/ \___/\_|     \_____/\____/\_| \_|\___/ 
+
+			</pre>
+			<h1 id="sub_title">Professional Copypasters.</h1>
+			<p id="changeEffects">Want some fancy effects? Click <a onclick="changeEffects()">HERE</a> to turn them on.</p>
+		</header>
+		<br>
+		<p>Some things you might be interested in:</p>
+		<nav id="nav_tabs">
+			<ul>
+				<li><a href="#home" class="tab_switcher" id="home_tab">Home</a></li>
+				<li><a href="#projects" class="tab_switcher" id="projects_tab">Our Projects</a></li>
+				<li><a href="#resources" class="tab_switcher" id="resources_tab">Resources</a></li>
+				<li><a href="#aboutus" class="tab_switcher" id="aboutus_tab">About Us</a></li>
+			</ul>
+		</nav>
+		
+		<div id="home" class="tabs">
+			<div class="grid">
+				<div class="grid_row">
+					<div class="grid_row_box">
+						<h2>Welcome user!</h2>
+						<p><em>Updated on AUGUST 8TH, 2024</em></p>
+						<br>
+						<p>This is my personal webpage with all my projects, images, news and more! Be sure to take a look around.</p>
+						<br>
+						<p>Any questions? You might find them answered on the about page: <a href="#about">ABOUT</a></p>
+						<p>Btw, this website is completly open source! I made a github repository for it: [<a href="https://github.com/Richard-Apps/richardapps-web" target="_blank">link</a>]</p>
+						<br>
+						<p>Don't forget to check out the different themes for the website! They are located below this post on the right.</p>
+					</div>
+				</div>
+				<div class="grid_row">
+					<div class="grid_row_box">
+						<h2>Latest Updates</h2>
+						<p><em>AUGUST 8TH, 2024</em> More themes, a lot of QoL-improvements and a updated welcome post.</p>
+						<p><em>JUNE 30TH, 2024</em> Added Themes! You can switch between them to the right of the update list. 'cherry' is my favorite one :).</p>
+						<p><em>JUNE 15TH, 2024</em> Some important changes! Font-weight reduced to make everything sharper, optimized the background videos for faster loading times and fixed the 404 page. :)</p>
+						<p><em>MAY 24TH, 2024:</em> New animations, added another background, improved the about-page and a lot of minor improvements!</p>
+						<p><em>MAY 20TH, 2024:</em> Redesigned the main- and about-page. Changed from news-tab to home-tab, now presenting more of a 'hub' design.</p>
+					</div>
+					<div class="grid_row_box grid_row_box_shrink">
+						<div id="theme_selector">
+							<h2>THEMES</h2>
+							<div id="theme_list">
+								<p><a onclick="changeTheme('ocean')">> ocean <</a></p>
+								<p><a onclick="changeTheme('terminal')">terminal</a></p>
+								<p><a onclick="changeTheme('cherry')">cherry</a></p>
+								<p><a onclick="changeTheme('amber')">amber</a></p>
+								<p><a onclick="changeTheme('deepsea')">deepsea</a></p>
+								&nbsp;
+								<p><a onclick="changeTheme('danger')">danger</a></p>
+								<p><a onclick="changeTheme('rainy')">rainy</a></p>
+								<p><a onclick="changeTheme('win95')">win95</a></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Projects -->
+		<div id="projects" class="tabs">
+			<h2>PROJECTS</h2>
+			<h3>A list of our projects that we have done!</h3>
+			<div id="projects_list">
+				<nav>
+					<ul>
+						<li><a onclick="changeColl('apostol')" class="tab_active pic_coll_tabs">Apostol</a></li>
+						<li><a onclick="changeColl('arcilla')" class="pic_coll_tabs">Arcilla</a></li>
+						<li><a onclick="changeColl('victoria')" class="pic_coll_tabs">Victoria</a></li>
+					</ul>
+				</nav>
+				<div id="apostol" class="pic_coll">
+					<h3>Here's a collection of Isometric 3D rooms I made with <a href="https://blender.org" target="_blank">Blender</a>!</h3>
+					<p><em>Hover over them to view more information</em></p>
+					<div class="row row_photography">
+						<div class="img_container">
+							<img src="https://i.postimg.cc/wjF4f76M/bedroom-1.jpg" loading="lazy" alt="A monochrome picture of the Golden-Gate-Brige.">
+							<div class="img_desc"><p>The quick brown fox jumps over the lazy dog.</p></div>
+						</div>
+						<div class="img_container">
+							<img src="https://i.postimg.cc/MpGmGtSZ/kitchen.jpg" loading="lazy" alt="A close-up picture of a chipmunk.">
+							<div class="img_desc"><p>The quick brown fox jumps over the lazy dog.</p></div>
+						</div>
+						<div class="img_container">
+							<img src="https://i.postimg.cc/HxM2gxCQ/kitchen-2.jpg" loading="lazy" alt="A minimalistic picture of a helicopter.">
+							<div class="img_desc"><p>The quick brown fox jumps over the lazy dog.</p></div>
+						</div>
+					</div>
+				</div>
+				<div id="arcilla" class="pic_coll">
+					<h3>Here are some images I took in the USA!</h3>
+					<p><em>Hover over them to view more information!</em></p>
+					<ul id="pr_list">
+						<li>
+							<p class="pr_title">NameGEN</p>
+							<p class="pr_desc">Generate random, but good sounding, names for your everyday needs! Simple, yet effective tool if you need a nickname, project name, or anything else!</p>
+							<br>
+							<p><a href="https://namegen.richardapps.net" target="_blank">VISIT PAGE</a></p>
+						</li>
+						<li>
+							<p class="pr_title">VisualINC</p>
+							<p class="pr_desc">A website builder for creating awesome webpages without coding!</p>
+							<p class="pr_warning">[!] Still under development, not fully functional yet! (Current Version only works on Chrome, for now)</p>
+							<br>
+							<p><a href="https://visualinc.richardapps.net" target="_blank">VISIT PAGE</a></p>
+						</li>
+						<li>
+							<p class="pr_title">RichardApps-web</p>
+							<p class="pr_desc">The public repository of the website's source code.</p>
+							<p class="pr_info">[?] Feel free to report bugs, add features and contribute if you'd like! :)</p>
+							<br>
+							<p><a href="https://github.com/Richard-Apps/richardapps-web" target="_blank">VISIT PAGE</a></p>
+						</li>
+					</ul>
+				</div>
+				<div id="victoria" class="pic_coll">
+
+				</div>
+			</div>
+		</div>
+
+		<!-- Resources -->
+		<div id="resources" class="tabs">
+			<h2>Resources</h2>
+			<p>Here are some good websites and useful resources that we have found for future projects:</p>
+			<br>
+			<div class="grid">
+				<div class="grid_row">
+					<div class="grid_row_box">
+						<p>- development -</p>
+						<p>-> W3Schools [<a href="https://www.w3schools.com/" target="_blank">link</a>] <em>Known for its beginner-friendly approach, with simple explanations and interactive examples.</em></p>
+						<p>-> GitHub [<a href="https://www.github.com/" target="_blank">link</a>] <em>A platform that's like a social network for developers, but instead of sharing photos and updates, they share code.</em></p>
+					
+					</div>
+				</div>
+				<div class="grid_row">
+					<div class="grid_row_box">
+						<p>- graphics -</p>
+						<p>-> postimages [<a href="https://postimages.org" target="_blank">link</a>] <em>Best service for hosting your images, without compressing them!</em></p>
+						<p>-> caesium-ic [<a href="https://github.com/Lymphatus/caesium-image-compressor" target="_blank">link</a>] <em>Desktop software to optimize your images to make your page load faster.</em></p>
+					</div>
+				</div>
+				<div class="grid_row">
+					<div class="grid_row_box">
+						<p>- inspiration for web-design -</p>
+						<p>-> React.js [<a href="https://react.dev/" target="_blank">link</a>] <em>A POPULAR JavaScript library for building user interfaces, particularly for single-page applications.</em></p>
+						<p>-> three.js [<a href="https://threejs.org/" target="_blank">link</a>] <em>A POWERFUL JavaScript library that makes it much easier to create 3D graphics within a web browser.</em></p>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- About Us -->
+		<div id="aboutus" class="tabs">
+			<h2>ABOUT US</h2>
+			<h3>Meet the team!</h3>
+			<ul id="pr_list">
+				<li>
+					<p class="pr_title">APOSTOL, Elicia Klyde Martigne</p>
+					<br>
+					<p class="pr_desc">i make 3d models.</p>
+					<br>
+					<p class="contact_link"><i class="fa-brands fa-instagram fa-fw"></i><a href="https://www.instagram.com/by_ekma/" target="_blank">Instagram</a></p>
+					<p class="contact_link"><i class="fa-brands fa-facebook fa-fw"></i><a href="https://www.facebook.com/ekm.apostol" target="_blank">Facebook</a></p>
+				</li>
+				<li>
+					<p class="pr_title">ARCILLA, Donsir</p>
+					<br>
+					<p class="pr_desc">let me code :(</p>
+					<br>
+					<p class="pr_info">[⭐] personal top-rated movies I can recommend:
+						<br>
+						<a href="https://www.imdb.com/title/tt0338013/" target="_blank">Eternal Sunshine of the Spotless Mind</a>
+						<br>
+						<a href="https://www.imdb.com/title/tt0327597/" target="_blank">Coraline</a>
+					</p>
+					<br>
+					<p class="pr_info">[🎮] games that make me depressed:</p>
+					<a href="https://teamfighttactics.leagueoflegends.com/" target="_blank">Teamfight Tactics</a>
+					<br>
+					<a href="https://playvalorant.com/" target="_blank">VALORANT</a>
+					<br>
+					<br>
+					<p class="contact_link"><i class="fa-brands fa-instagram fa-fw"></i><a href="https://www.instagram.com/donsirr/" target="_blank">Instagram</a></p>
+					<p class="contact_link"><i class="fa-brands fa-facebook fa-fw"></i><a href="https://www.facebook.com/donsirr" target="_blank">Facebook</a></p>
+					<p class="contact_link"><i class="fa-brands fa-github fa-fw"></i><a href="https://github.com/donsirr" target="_blank">GitHub</a></p>
+				</li>
+				<li>
+					<p class="pr_title">VICTORIA, Ashton Wayne</p>
+					<br>
+					<p class="pr_desc">As an aspiring programmer wtih a passion for technology, I'm driven to create innovative and engaging digital experiences. My love for gaming and movies fuels my desire to develop interactive and immersive applications. I'm excited to showcase my skills and contribute to exciting projects!</p>
+					<br>
+					<p class="pr_info">[🎬] my favorite movies:
+						<br>
+						<a href="https://www.imdb.com/title/tt0988045/" target="_blank">Sherlock Holmes</a>
+						<br>
+						<a href="https://www.imdb.com/title/tt2802144/" target="_blank">Kingsman: The Secret Service</a>
+					</p>
+					<br>
+					<p class="pr_info">[🎮] my favorite games:</p>
+					<a href="https://playvalorant.com/" target="_blank">VALORANT</a>
+					<br>
+					<a href="https://store.steampowered.com/app/730/CounterStrike_2/" target="_blank">CS:GO</a>
+					<br>
+					<br>
+					<p class="contact_link"><i class="fa-brands fa-instagram fa-fw"></i><a href="https://www.instagram.com/cendre_17/" target="_blank">Instagram</a></p>
+					<p class="contact_link"><i class="fa-brands fa-facebook fa-fw"></i><a href="https://www.facebook.com/profile.php?id=100009431573188" target="_blank">Facebook</a></p>
+				</li>
+			</ul>
+		</div>
+
+	</div>
+</body>
+</html>
