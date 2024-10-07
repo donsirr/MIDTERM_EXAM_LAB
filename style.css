@@ -266,13 +266,24 @@ nav ul li a {
     color: var(--info-color);
 }
 
+.pr_video {
+    margin-top: 1.5em;
+    margin-bottom: 1.5em;
+    
+    display: flex;
+    justify-content: space-between;
+    gap: 1.5em;
+    
+    width: 100%;
+}
+
 /* PICTURES */
 .row, .img_container {
     margin-top: 1.5em;
     margin-bottom: 1.5em;
     
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     gap: 1.5em;
     
     width: 100%;
@@ -337,6 +348,9 @@ nav ul li a {
 #pictures_list nav {
     margin-top: -.5em;
 }
+
+/* VIDEOS */
+
 
 /* ABOUT */
 table {
